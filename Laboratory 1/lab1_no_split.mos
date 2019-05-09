@@ -7,7 +7,7 @@ uses "mmxprs"; !gain access to the Xpress-Optimizer solver
 
 !sample declarations section
 declarations
-NODES = 1..12
+NODES = 1..5
 DELTA: integer
 b: array (NODES,NODES) of mpvar !decision variable
 fsd: array(NODES,NODES,NODES,NODES) of mpvar !Flow source destination changes for "i" "j" "s" and "d" for all the configuration
@@ -52,7 +52,7 @@ MyFunct:=Obj
 forall(i in NODES) sum (j in NODES) b(i,j) <= DELTA !Maximum transmitter
 forall(i in NODES) sum (j in NODES) b(j,i) <= DELTA !Maximum receiver
 forall(s in NODES, d in NODES | s<>d) sum(j in NODES) fsd(s,d,s,j)=1 !Outgoing
-forall(s in NODES, d in NODES | s<>d) sum(j in NODES) fsd(s,d,j,s)=1 !Ingoing
+forall(s in NODES, d in NODES | s<>d) sum(j in NODES) fsd(s,d,j,d)=1 !Ingoing
 forall(s in NODES, d in NODES | s<>d) sum(j in NODES) fsd(s,d,d,j)=0 !
 forall(s in NODES, d in NODES | s<>d) sum(j in NODES) fsd(s,d,j,s)=0 !
 forall(i in NODES,j in NODES) f(i,j) = sum(s in NODES, d in NODES) TRAFFIC(s,d)*fsd(s,d,i,j)
@@ -61,8 +61,6 @@ forall(i in NODES,s in NODES, d in NODES | i<>s and i<>d) sum(j in NODES) fsd(s,
 !forall(i in NODES, s in NODES ,d in NODES) fsd(i,j,s,d) <= M*b
 forall(i in NODES, j in NODES) f(i,j)<= Obj
 forall(s in NODES, d in NODES, i in NODES, j in NODES) fsd(s,d,i,j)<=b(i,j)
-
-
 
 
 
