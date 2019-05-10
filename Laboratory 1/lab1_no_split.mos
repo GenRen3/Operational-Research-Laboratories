@@ -38,7 +38,7 @@ end-declarations
 
 Tstart:= timestamp
 
-Delta:=4
+DELTA:=4
 
 setrandseed(4) !set a different seed for each running
 
