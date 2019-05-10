@@ -73,7 +73,7 @@ forall(i in NODES, j in NODES,s in NODES,d in NODES) fsd(s,d,i,j) is_binary !For
 
 MyFunct:=Obj
 
-
+setparam("XPRS_MAXTIME",-300)
 
 
 !constraints
