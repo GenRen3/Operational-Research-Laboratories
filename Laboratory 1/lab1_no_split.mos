@@ -6,7 +6,7 @@ uses "mmxprs"; !gain access to the Xpress-Optimizer solver
 
 !sample declarations section
 declarations
-NODES = 1..5
+NODES = 1..12
 DELTA: integer
 b: array (NODES,NODES) of mpvar !decision variable
 fsd: array(NODES,NODES,NODES,NODES) of mpvar !Flow source destination changes for "i" "j" "s" and "d" for all the configuration
