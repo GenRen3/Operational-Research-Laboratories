@@ -1,0 +1,3 @@
+N = 8 Objective value is 28.4421.
+N = 16 Objective value is 182.026.
+N = 24 Objective value is 423.722.
