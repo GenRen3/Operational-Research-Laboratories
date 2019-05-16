@@ -1,0 +1,3 @@
+DELTA=1 Objective value is 390.885.
+DELTA=2 Objective value is 107.116.
+DELTA=4 Objective value is 40.1466.
