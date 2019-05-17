@@ -1,0 +1,1 @@
+seed(6) N(8) DELTA(4) Objective value is 30.5405.
