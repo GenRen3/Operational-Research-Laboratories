@@ -18,7 +18,7 @@ def SCOM(N,DELTA):
 
     #input parameters
     nodes = np.arange(N)
-    tsd = np.random.randint(0, 5, (N,N))
+    tsd = np.random.uniform(0, 4, (N,N))
     np.fill_diagonal(tsd,0)
     Tsd = copy.copy(tsd)
 
@@ -147,13 +147,13 @@ if __name__ == '__main__':
 #%%
     plt.figure()
 
-    plt.plot(N,results_scom[:,0], 'ro-')
-    plt.plot(N,results_scom[:,1], 'go-')
-    plt.plot(N,results_scom[:,2], 'bo-')
+    plt.plot(N,results_scom[0,:], 'ro-')
+    plt.plot(N,results_scom[1,:], 'go-')
+    plt.plot(N,results_scom[2,:], 'bo-')
 
-    plt.plot(N,results_random[:,0], 'ro--')
-    plt.plot(N,results_random[:,1], 'go--')
-    plt.plot(N,results_random[:,2], 'bo--')
+    plt.plot(N,results_random[0,:], 'ro--')
+    plt.plot(N,results_random[1,:], 'go--')
+    plt.plot(N,results_random[2,:], 'bo--')
 
     plt.xlabel('nodes')
     plt.legend([r'SCOM $\Delta$=1', 'SCOM $\Delta$=2', 'SCOM $\Delta$=4',
