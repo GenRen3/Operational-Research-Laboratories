@@ -170,6 +170,6 @@ if __name__ == '__main__':
     plt.title(title)
 #    plt.margins(0.01, 0.1)
     plt.grid(which='both', axis='y')
-#    plt.savefig(str(title) + '.png')
+    plt.savefig(str(title) + '.pdf')
     plt.show()
 #    print (average_improvement,np.mean(average_improvement))
