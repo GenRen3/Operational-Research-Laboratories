@@ -1,9 +1,19 @@
-X=[4,6,8]
-Y=[40.6172,40.5248,39.5032]
+clear all; close all; clc;
+
+X=[4,6,8,10,12,14];
+
+Y_split=[40.6172, 40.5248, 39.5032, 39.7115, 40.0511, 38.7714];
+Y_no_split=[114.6550, 130.1530,];
+
 
 figure(1);
-title("Objective funtions for different seeds");
-plot(X,Y,'-o')
+
+title('Objective funtions with different seeds');
+
+plot(X,Y_split,'-o',X,Y_no_split,'-o')
+
 grid minor
-xlabel("Seeds");
-ylabel("f_{max}");
+
+xlabel('Random Seeds');
+ylabel('f_{max}');
+legend('Split','No Split')
