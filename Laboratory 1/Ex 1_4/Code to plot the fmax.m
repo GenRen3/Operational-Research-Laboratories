@@ -10,7 +10,7 @@ figure(1);
 
 title('Objective funtions with different seeds');
 
-semilogy(X,Y_split,'-o',X,Y_no_split,'-o')
+plot(X,Y_split,'-o',X,Y_no_split,'-o')
 
 grid minor
 
