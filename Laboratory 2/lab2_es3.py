@@ -30,7 +30,7 @@ def plots(resg, resr):
     
     plt.plot(N,resg[0,:], 'bo-')
     
-    plt.plot(N,resr[0,:], 'ko--')
+    plt.plot(N,resr[0,:], 'ro--')
     
     plt.xlabel('nodes')
     plt.legend(['greedy algorithm', 'random topology'])
@@ -186,8 +186,8 @@ class Greedy(Topology):
         return (score, best)
         
     def adjacent_cells(self, my_grid,row,col):
-        rows= np.size(my_grid,0)
-        cols= np.size(my_grid,1)
+        rows= np.size(my_grid, 0)
+        cols= np.size(my_grid, 1)
         count = 0
         if (my_grid[row,(col+1)%cols] != -1):
             count+=1
@@ -255,7 +255,7 @@ class Greedy(Topology):
     
         my_grid = np.ones((rows,cols))*(-1)
         
-        #creation of manhattan-like random topology
+        # Creation of manhattan-like random topology.
         
         # il nodo che complessivamente scambia più traffico con tutti gli altri in ingresso e uscita
         starting_node = np.argmax(np.sum(tsd,0) + np.sum(tsd,1))
@@ -280,7 +280,7 @@ class Greedy(Topology):
 
         bij = self.bij_creation(my_grid)
             
-        #graph creation
+        # Graph creation.
         elist = np.argwhere(bij)
         G = nx.DiGraph()
         my_nodes = np.arange(0,nodes)
@@ -288,15 +288,15 @@ class Greedy(Topology):
         G.add_edges_from(elist)
     #   nx.draw(G)
             
-        #routing
+        # Routing.
         fij = self.traffic_routing(bij)
       
         return (np.max(fij))
 
 if __name__ == '__main__':
  
-    results_greedy = np.zeros((1,len(N)))   
-    results_random = np.zeros((1,len(N)))
+    results_greedy = np.zeros((1, len(N)))   
+    results_random = np.zeros((1, len(N)))
           
     for cnt, n in enumerate(N):
         tsd = traffic_matrix(n)
