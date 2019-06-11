@@ -2,16 +2,16 @@ clear all; close all; clc;
 
 set(groot,'defaultLineLineWidth',0.8)
 
-X=[8, 16, 24];
+X=[1, 2, 4];
 
 
-Y_1=[43.65,90.83,96.11];
+Y_1=[42.98,83.54,59.75];
 
-Y_2=[43.87,91.13,95.58];
+Y_2=[42.35,82.80,63.21];
 
-Y_3=[46.62,92.54,96.00];
+Y_3=[40.05,83.62,58.10];
 
-Y_4=[44.713, 91.5, 95.8966667]; %average
+Y_4=[41.7933333, 83.32, 60.3633333]; %average
 
 
 figure(1);
@@ -26,7 +26,7 @@ grid minor
 
 xlabel('Number of Nodes = 8, 16, 24');
 
-ylabel('Gap value');
+ylabel('Gap value (%)');
 
 legend('Location','southeast')
 legend('Seed = 4','Seed = 6','Seed = 8', 'Average')
