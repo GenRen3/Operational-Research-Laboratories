@@ -11,7 +11,7 @@ Y_2=[43.87,91.13,95.58];
 
 Y_3=[46.62,92.54,96.00]; 
 
-Y_4=[44.713, 91.5, 95.8966667] %average
+Y_4=[44.713, 91.5, 95.8966667]; %average
 
 
 figure(1);
@@ -26,6 +26,7 @@ grid minor
 
 xlabel('Number of Nodes = 8, 16, 24');
 
-ylabel('Gap value}');
+ylabel('Gap value');
 
+legend('Location','southeast')
 legend('Seed = 4','Seed = 6','Seed = 8', 'Average')
