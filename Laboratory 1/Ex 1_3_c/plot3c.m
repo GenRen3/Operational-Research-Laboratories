@@ -16,15 +16,15 @@ Y_4=[41.7933333, 83.32, 60.3633333]; %average
 
 figure(1);
 
-title('Objective funtions with different seeds');
+title('Gap percentages for different \Delta and Seeds');
 
 
-semilogy(X,Y_1,'-o',X,Y_2,'-o',X,Y_3,'-o',X,Y_4,'-o')
+plot(X,Y_1,'-o',X,Y_2,'-o',X,Y_3,'-o',X,Y_4,'-o')
 
 grid minor
 
 
-xlabel('Number of Nodes = 8, 16, 24');
+xlabel('Number of \Delta = 1, 2, 4');
 
 ylabel('Gap value (%)');
 
